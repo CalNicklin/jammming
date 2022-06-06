@@ -1,6 +1,6 @@
 let userAccessToken;
-const clientId = b533500775164346aeadd6758b2fbb2c;
-const redirectUri = http://localhost:3000/;
+const clientId = 'b533500775164346aeadd6758b2fbb2c';
+const redirectUri = 'http://localhost:3000/';
 
 const Spotify = {
     getAccessToken() {
@@ -16,7 +16,7 @@ const Spotify = {
             userAccessToken = userAccessTokenMatch[1];
             const expiresIn = Number(expiresInMatch[1]);
             // This clears the parameters, allowing us to get new UAT when expired
-            window.setTimeout(() => accessToken = '', expiresIn * 1000);
+            window.setTimeout(() => userAccessToken = '', expiresIn * 1000);
             window.history.pushState('Access Token', null, '/');
             return userAccessToken;
         } else {
